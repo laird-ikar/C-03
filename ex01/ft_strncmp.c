@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 18:27:58 by bguyot            #+#    #+#             */
-/*   Updated: 2021/11/16 14:28:00 by bguyot           ###   ########.fr       */
+/*   Updated: 2021/11/18 10:02:51 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	unsigned int	i;
 
 	i = 0;
-	while (i < n && s1[i] && s2[i] && s1[i] == s2[i])
+	while (i < n - 1 && s1[i] && s2[i] && s1[i] == s2[i])
 	{
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	if (n)
+		return (s1[i] - s2[i]);
+	return (0);
 }
